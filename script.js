@@ -10,50 +10,101 @@ const shiftMalam = [
 ];
 
 /* JADWAL */
-const schedule = [
-    {
-        date: "17-Dec-2025",
-        pagi: {
-            SURIA88: "Nibras",
-            HAKABET: "Andi",
-            VIOBET: "Anggie",
-            TEMPO88: "Firman",
-            FILA88: "Angga",
-            IJOBET: "Jerry",
-            HAHAWIN88: "Kenny"
-        },
-        malam: {
-            SURIA88: "Dea",
-            HAKABET: "Kris",
-            VIOBET: "Heno",
-            TEMPO88: "Alfan",
-            FILA88: "Kheiren",
-            IJOBET: "Sindy",
-            HAHAWIN88: "Valvi"
-        }
-    },
-    {
-        date: "18-Dec-2025",
-        pagi: {
-            SURIA88: "Nibras",
-            HAKABET: "Kenny",
-            VIOBET: "Chandy",
-            TEMPO88: "Firman",
-            FILA88: "Angga",
-            IJOBET: "Jerry",
-            HAHAWIN88: "Kenny"
-        },
-        malam: {
-            SURIA88: "Dea",
-            HAKABET: "Kris",
-            VIOBET: "Heno",
-            TEMPO88: "Alfan",
-            FILA88: "Valvi",
-            IJOBET: "Sindy",
-            HAHAWIN88: "Kris, Alfan"
-        }
-    }
+const scheduleData = [
+  {
+    date: "17-Dec-2025",
+    SURIA88: ["Nibras", "Dea"],
+    HAKABET: ["Andi", "Kris"],
+    VIOBET: ["Anggie", "Heno"],
+    TEMPO88: ["Firman", "Alfan"],
+    FILA88: ["Kenny", "Kheiren"],
+    IJOBET: ["Jerry", "Sindy"],
+    HAHAWIN88: ["Andi, Anggie", "Valvi"]
+  },
+  {
+    date: "18-Dec-2025",
+    SURIA88: ["Nibras", "Dea"],
+    HAKABET: ["Kenny", "Kris"],
+    VIOBET: ["Chandy", "Heno"],
+    TEMPO88: ["Firman", "Alfan"],
+    FILA88: ["Angga", "Valvi"],
+    IJOBET: ["Jerry", "Sindy"],
+    HAHAWIN88: ["Kenny, Firman", "Kris, Alfan"]
+  },
+  {
+    date: "19-Dec-2025",
+    SURIA88: ["Nibras", "Dea"],
+    HAKABET: ["Andi", "Kris"],
+    VIOBET: ["Anggie", "Heno"],
+    TEMPO88: ["Kenny", "Alfan"],
+    FILA88: ["Angga", "Kheiren"],
+    IJOBET: ["Jerry", "Sindy"],
+    HAHAWIN88: ["Andi, Anggie", "Kris, Alfan"]
+  },
+  {
+    date: "20-Dec-2025",
+    SURIA88: ["Kenny", "Heno"],
+    HAKABET: ["Andi", "Kris"],
+    VIOBET: ["Anggie", "Vindy"],
+    TEMPO88: ["Firman", "Alfan"],
+    FILA88: ["Angga", "Kheiren"],
+    IJOBET: ["Jerry", "Sindy"],
+    HAHAWIN88: ["Andi, Anggie", "Kris, Alfan"]
+  },
+  {
+    date: "21-Dec-2025",
+    SURIA88: ["Nibras", "Dea"],
+    HAKABET: ["Andi", "Valvi"],
+    VIOBET: ["Anggie", "Heno"],
+    TEMPO88: ["Firman", "Alfan"],
+    FILA88: ["Angga", "Kheiren"],
+    IJOBET: ["Jerry", "Sindy"],
+    HAHAWIN88: ["Andi, Anggie", "Valvi, Alfan"]
+  },
+  {
+    date: "22-Dec-2025",
+    SURIA88: ["Nibras", "Dea"],
+    HAKABET: ["Andi", "Valvi"],
+    VIOBET: ["Anggie", "Heno"],
+    TEMPO88: ["Firman", "Alfan"],
+    FILA88: ["Angga", "Kheiren"],
+    IJOBET: ["Jerry", "Sindy"],
+    HAHAWIN88: ["Andi, Anggie", "Valvi, Alfan"]
+  },
+  {
+    date: "23-Dec-2025",
+    SURIA88: ["Nibras", "Dea"],
+    HAKABET: ["Andi", "Valvi"],
+    VIOBET: ["Anggie", "Vindy"],
+    TEMPO88: ["Firman", "Alfan"],
+    FILA88: ["Angga", "Kheiren"],
+    IJOBET: ["Jerry", "Kris"],
+    HAHAWIN88: ["Kenny", "Valvi, Alfan"]
+  }
 ];
+
+/* ===============================
+   RENDER TABLE
+================================ */
+const tbody = document.getElementById("scheduleBody");
+
+scheduleData.forEach(day => {
+  const row = document.createElement("tr");
+
+  row.innerHTML = `
+    <td>${day.date}</td>
+    <td>${day.SURIA88.join("<br>")}</td>
+    <td>${day.HAKABET.join("<br>")}</td>
+    <td>${day.VIOBET.join("<br>")}</td>
+    <td>${day.TEMPO88.join("<br>")}</td>
+    <td>${day.FILA88.join("<br>")}</td>
+    <td>${day.IJOBET.join("<br>")}</td>
+    <td>${day.HAHAWIN88.join("<br>")}</td>
+  `;
+
+  tbody.appendChild(row);
+});
+
 
 /* LOAD SIDEBAR */
 function loadSidebar() {
@@ -109,3 +160,4 @@ document.addEventListener("DOMContentLoaded", () => {
     loadSidebar();
     loadSchedule();
 });
+
