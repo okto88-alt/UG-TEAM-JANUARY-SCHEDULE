@@ -12,6 +12,30 @@ const shiftMalam = [
 ];
 
 /* ======================================
+   RENDER SHIFT LIST (SIDEBAR)
+====================================== */
+const shiftPagiEl = document.getElementById("shiftPagi");
+const shiftMalamEl = document.getElementById("shiftMalam");
+
+function renderShiftList() {
+  shiftPagiEl.innerHTML = "";
+  shiftMalamEl.innerHTML = "";
+
+  shiftPagi.forEach(name => {
+    const li = document.createElement("li");
+    li.textContent = name;
+    shiftPagiEl.appendChild(li);
+  });
+
+  shiftMalam.forEach(name => {
+    const li = document.createElement("li");
+    li.textContent = name;
+    shiftMalamEl.appendChild(li);
+  });
+}
+
+
+/* ======================================
    SCHEDULE DATA
    index 0 = pagi
    index 1 = malam
@@ -167,4 +191,5 @@ searchInput.addEventListener("input", e => {
 /* ======================================
    INIT
 ====================================== */
+renderShiftList();
 renderTable(scheduleData);
