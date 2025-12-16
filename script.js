@@ -1,85 +1,80 @@
-/* ===============================
-   DATA ANGGOTA
-================================ */
-const anggota = {
-    pagi: ["Andi", "Bella", "Carlos"],
-    malam: ["Dina", "Eko", "Fajar"]
-};
+const shiftPagi = ["Dea", "Kris", "Valvi"];
+const shiftMalam = ["Heno", "Alfan", "Kheiren", "Sindy"];
 
-/* ===============================
-   DATA JADWAL JANUARI
-================================ */
-const jadwalJanuari = [
-    { tanggal: "1 Januari", nama: "Andi", shift: "pagi", web: "Website A" },
-    { tanggal: "2 Januari", nama: "Bella", shift: "pagi", web: "Website B" },
-    { tanggal: "3 Januari", nama: "Carlos", shift: "pagi", web: "Website C" },
-    { tanggal: "4 Januari", nama: "Dina", shift: "malam", web: "Website A" },
-    { tanggal: "5 Januari", nama: "Eko", shift: "malam", web: "Website B" },
-    { tanggal: "6 Januari", nama: "Fajar", shift: "malam", web: "Website C" }
-    // lanjutkan sampai 31 Januari
+const schedule = [
+    {
+        date: "10-Dec-2025",
+        pagi: {
+            SURIA88: "Dea",
+            HAKABET: "Kris",
+            VIOBET: "Heno",
+            TEMPO88: "Alfan",
+            FILA88: "Kheiren",
+            IJOBET: "Sindy",
+            HAHAWIN88: "Valvi"
+        },
+        malam: {
+            SURIA88: "Heno",
+            HAKABET: "Valvi",
+            VIOBET: "Dea",
+            TEMPO88: "Kris",
+            FILA88: "Alfan",
+            IJOBET: "Kheiren",
+            HAHAWIN88: "-"
+        }
+    }
 ];
 
-/* ===============================
-   TAMPILKAN LIST ANGGOTA
-================================ */
-function tampilkanAnggota() {
-    const pagiList = document.getElementById("shiftPagi");
-    const malamList = document.getElementById("shiftMalam");
-
-    anggota.pagi.forEach(nama => {
-        const li = document.createElement("li");
-        li.textContent = nama;
-        pagiList.appendChild(li);
+/* LOAD SIDEBAR */
+function loadSidebar() {
+    shiftPagi.forEach(n => {
+        document.getElementById("shiftPagi").innerHTML += `<li>${n}</li>`;
     });
-
-    anggota.malam.forEach(nama => {
-        const li = document.createElement("li");
-        li.textContent = nama;
-        malamList.appendChild(li);
+    shiftMalam.forEach(n => {
+        document.getElementById("shiftMalam").innerHTML += `<li>${n}</li>`;
     });
 }
 
-/* ===============================
-   GENERATE TABEL JADWAL
-================================ */
-function tampilkanJadwal(data) {
-    const tbody = document.getElementById("jadwalBody");
-    tbody.innerHTML = "";
-
-    data.forEach(item => {
-        const tr = document.createElement("tr");
-
-        tr.innerHTML = `
-            <td>${item.tanggal}</td>
-            <td>${item.nama}</td>
-            <td>
-                <span class="shift-${item.shift}">
-                    ${item.shift.charAt(0).toUpperCase() + item.shift.slice(1)}
-                </span>
-            </td>
-            <td>${item.web}</td>
+/* LOAD TABLE */
+function loadSchedule() {
+    const body = document.getElementById("scheduleBody");
+    schedule.forEach(day => {
+        body.innerHTML += `
+            <tr>
+                <td rowspan="2">${day.date}</td>
+                ${Object.values(day.pagi).map(v => `<td>${v}</td>`).join("")}
+            </tr>
+            <tr>
+                ${Object.values(day.malam).map(v => `<td>${v}</td>`).join("")}
+            </tr>
         `;
-
-        tbody.appendChild(tr);
     });
 }
 
-/* ===============================
-   FILTER SHIFT
-================================ */
-function filterShift(shift) {
-    if (shift === "all") {
-        tampilkanJadwal(jadwalJanuari);
-    } else {
-        const filtered = jadwalJanuari.filter(item => item.shift === shift);
-        tampilkanJadwal(filtered);
-    }
+/* SEARCH */
+function searchNama() {
+    const q = document.getElementById("searchInput").value.toLowerCase();
+    const result = [];
+
+    schedule.forEach(day => {
+        for (let web in day.pagi) {
+            if (day.pagi[web].toLowerCase().includes(q)) {
+                result.push(`${day.date} | ${day.pagi[web]} | ${web} (Pagi)`);
+            }
+        }
+        for (let web in day.malam) {
+            if (day.malam[web].toLowerCase().includes(q)) {
+                result.push(`${day.date} | ${day.malam[web]} | ${web} (Malam)`);
+            }
+        }
+    });
+
+    document.getElementById("searchResult").innerHTML =
+        q && result.length
+            ? result.join("<br>")
+            : "";
 }
 
-/* ===============================
-   LOAD SAAT HALAMAN DIBUKA
-================================ */
-document.addEventListener("DOMContentLoaded", () => {
-    tampilkanAnggota();
-    tampilkanJadwal(jadwalJanuari);
-});
+/* INIT */
+loadSidebar();
+loadSchedule();
