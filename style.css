@@ -6,14 +6,13 @@
 }
 
 body {
-    background: linear-gradient(135deg, #f6e8eb, #e8f0fa);
+    background: linear-gradient(135deg, #f7e7eb, #e7effa);
     padding: 30px;
 }
 
-/* LAYOUT */
 .app {
     display: flex;
-    background: #fff;
+    background: #ffffff;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
@@ -34,14 +33,13 @@ body {
 }
 
 .sidebar ul {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .sidebar li {
     list-style: none;
     padding: 6px 0;
     font-size: 13px;
-    color: #333;
 }
 
 /* RIGHT */
@@ -52,11 +50,11 @@ body {
 
 /* SEARCH */
 .top-bar {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .top-bar input {
-    width: 300px;
+    width: 280px;
     padding: 10px 14px;
     border-radius: 8px;
     border: 1px solid #ddd;
