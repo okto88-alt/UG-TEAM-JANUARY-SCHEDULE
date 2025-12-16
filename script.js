@@ -127,13 +127,13 @@ function renderTable(data) {
 
     tr.innerHTML = `
       <td>${day.date}</td>
-      <td>${day.SURIA88.join("<br>")}</td>
-      <td>${day.HAKABET.join("<br>")}</td>
-      <td>${day.VIOBET.join("<br>")}</td>
-      <td>${day.TEMPO88.join("<br>")}</td>
-      <td>${day.FILA88.join("<br>")}</td>
-      <td>${day.IJOBET.join("<br>")}</td>
-      <td>${day.HAHAWIN88.join("<br>")}</td>
+      <td>${day.SURIA88.join("<br><br>")}</td>
+      <td>${day.HAKABET.join("<br><br>")}</td>
+      <td>${day.VIOBET.join("<br><br>")}</td>
+      <td>${day.TEMPO88.join("<br><br>")}</td>
+      <td>${day.FILA88.join("<br><br>")}</td>
+      <td>${day.IJOBET.join("<br><br>")}</td>
+      <td>${day.HAHAWIN88.join("<br><br>")}</td>
     `;
 
     tbody.appendChild(tr);
@@ -193,3 +193,4 @@ searchInput.addEventListener("input", e => {
 ====================================== */
 renderShiftList();
 renderTable(scheduleData);
+
