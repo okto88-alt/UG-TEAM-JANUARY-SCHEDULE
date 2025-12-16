@@ -42,6 +42,38 @@ body {
     font-size: 13px;
 }
 
+/* SHIFT BOX */
+.shift-box {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+}
+
+.shift-box h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.shift-box ul {
+    list-style: none;
+}
+
+.shift-box li {
+    font-size: 13px;
+    padding: 6px 0;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.shift-box li:last-child {
+    border-bottom: none;
+}
+
+
 /* RIGHT */
 .content {
     flex: 1;
