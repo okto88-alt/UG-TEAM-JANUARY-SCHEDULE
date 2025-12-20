@@ -76,7 +76,7 @@ const scheduleData = [
     FILA88: ["Angga", "Kheiren"],
     IJOBET: ["Jerry", "Kris"],
     HAHAWIN88: ["Kenny", "Valvi, Alfan"],
-    OFFDAY: ["Heno", "Sindy"]
+    OFFDAY: ["-", "Heno, Sindy"]
   },
   {
     date: "24-Dec-2025",
@@ -131,7 +131,7 @@ const scheduleData = [
     FILA88: ["Angga", "Kheiren"],
     IJOBET: ["Jerry", "Valvi"],
     HAHAWIN88: ["Kenny", "Heno, Alfan"],
-    OFFDAY: ["Vindy"]
+    OFFDAY: ["-", "Vindy"]
   },
   {
     date: "29-Dec-2025",
@@ -142,7 +142,7 @@ const scheduleData = [
     FILA88: ["Angga", "Kheiren"],
     IJOBET: ["Jerry", "Valvi"],
     HAHAWIN88: ["Kenny", "Heno, Alfan"],
-    OFFDAY: ["Kris", "Sindy"]
+    OFFDAY: ["-", "Kris, Sindy"]
   },
   {
     date: "30-Dec-2025",
@@ -153,7 +153,7 @@ const scheduleData = [
     FILA88: ["Angga", "Kheiren"],
     IJOBET: ["Jerry", "Kris"],
     HAHAWIN88: ["Andi, Anggie", "Alfan, Kheiren"],
-    OFFDAY: ["Chandy", "Heno", "Valvi"]
+    OFFDAY: ["Chandy", "Heno, Valvi"]
   },
   {
     date: "31-Dec-2025",
@@ -164,7 +164,7 @@ const scheduleData = [
     FILA88: ["Angga", "Kheiren"],
     IJOBET: ["Jerry", "Kris"],
     HAHAWIN88: ["Kenny", "Valvi"],
-    OFFDAY: []
+    OFFDAY: ["-","-"]
   }
 ];
 
@@ -242,5 +242,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("searchInput")
     .addEventListener("input", e => searchByName(e.target.value));
 });
+
 
 
