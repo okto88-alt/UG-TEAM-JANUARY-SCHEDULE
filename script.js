@@ -18,21 +18,25 @@ const shiftPagiEl = document.getElementById("shiftPagi");
 const shiftMalamEl = document.getElementById("shiftMalam");
 
 function renderShiftList() {
-  shiftPagiEl.innerHTML = "";
-  shiftMalamEl.innerHTML = "";
+  const pagiEl = document.getElementById("shiftPagi");
+  const malamEl = document.getElementById("shiftMalam");
+
+  pagiEl.innerHTML = "";
+  malamEl.innerHTML = "";
 
   shiftPagi.forEach(name => {
-    const li = document.createElement("li");
-    li.textContent = name;
-    shiftPagiEl.appendChild(li);
+    const div = document.createElement("div");
+    div.textContent = name;
+    pagiEl.appendChild(div);
   });
 
   shiftMalam.forEach(name => {
-    const li = document.createElement("li");
-    li.textContent = name;
-    shiftMalamEl.appendChild(li);
+    const div = document.createElement("div");
+    div.textContent = name;
+    malamEl.appendChild(div);
   });
 }
+
 
 
 /* ======================================
@@ -185,7 +189,11 @@ function formatOff(list) {
  * RENDER TABLE
  *********************************/
 const tbody = document.getElementById("scheduleBody");
-const searchInput = document.getElementById("searchInput");
+
+function formatCell(list) {
+  if (!list || list.length === 0) return "-";
+  return list.join("<br><br>");
+}
 
 function renderTable(data) {
   tbody.innerHTML = "";
@@ -195,44 +203,42 @@ function renderTable(data) {
 
     tr.innerHTML = `
       <td>${day.date}</td>
-      <td>${day.SURIA88.join("<br><br>")}</td>
-      <td>${day.HAKABET.join("<br><br>")}</td>
-      <td>${day.VIOBET.join("<br><br>")}</td>
-      <td>${day.TEMPO88.join("<br><br>")}</td>
-      <td>${day.FILA88.join("<br><br>")}</td>
-      <td>${day.IJOBET.join("<br><br>")}</td>
-      <td>${day.HAHAWIN88.join("<br><br>")}</td>
-      <td>${day.OFF DAY UG.join("<br><br>")}</td>
+      <td>${formatCell(day.SURIA88)}</td>
+      <td>${formatCell(day.HAKABET)}</td>
+      <td>${formatCell(day.VIOBET)}</td>
+      <td>${formatCell(day.TEMPO88)}</td>
+      <td>${formatCell(day.FILA88)}</td>
+      <td>${formatCell(day.IJOBET)}</td>
+      <td>${formatCell(day.HAHAWIN88)}</td>
+      <td>${formatCell(day.OFFDAY)}</td>
     `;
 
     tbody.appendChild(tr);
   });
 }
 
-/*********************************
- * SEARCH STAFF (FIXED)
- *********************************/
-function searchByName(name) {
-  const keyword = name.toLowerCase().trim();
-  const rows = document.querySelectorAll("tbody tr");
+/* ======================================
+   SEARCH BY NAME (WORKING)
+====================================== */
+function searchByName(value) {
+  const keyword = value.toLowerCase().trim();
+  const rows = document.querySelectorAll("#scheduleBody tr");
 
   rows.forEach(row => {
-    const text = row.textContent.toLowerCase();
-    row.style.display = text.includes(keyword) ? "" : "none";
+    row.style.display = row.textContent.toLowerCase().includes(keyword)
+      ? ""
+      : "none";
   });
 }
 
-
-    document.getElementById("searchResult").innerHTML =
-        q && result.length ? result.join("<br>") : "";
-
-
-/*********************************
- * INIT
- *********************************/
+/* ======================================
+   INIT
+====================================== */
 document.addEventListener("DOMContentLoaded", () => {
+  renderShiftList();
   renderTable(scheduleData);
+
+  document
+    .getElementById("searchInput")
+    .addEventListener("input", e => searchByName(e.target.value));
 });
-
-
-
