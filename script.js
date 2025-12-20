@@ -98,7 +98,7 @@ const scheduleData = [
     FILA88: ["Angga", "Kheiren"],
     IJOBET: ["Jerry", "Kris"],
     HAHAWIN88: ["Kenny, Firman", "Heno, Alfan"],
-    OFFDAY: ["Anggie", "Valvi"]
+    OFFDAY: ["Anggie, Andi", "Valvi"]
   },
   {
     date: "26-Dec-2025",
@@ -242,4 +242,5 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("searchInput")
     .addEventListener("input", e => searchByName(e.target.value));
 });
+
 
