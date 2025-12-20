@@ -136,7 +136,7 @@ const scheduleData = [
   {
     date: "29-Dec-2025",
     SURIA88: ["Nibras", "Dea"],
-    HAKABET: ["Andi", "Sindy"],
+    HAKABET: ["Andi", "Heno"],
     VIOBET: ["Anggie", "Vindy"],
     TEMPO88: ["Firman", "Alfan"],
     FILA88: ["Angga", "Kheiren"],
@@ -242,3 +242,4 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("searchInput")
     .addEventListener("input", e => searchByName(e.target.value));
 });
+
