@@ -1,179 +1,576 @@
-/* ===============================
-   DESIGN SYSTEM
-================================ */
-:root {
-    --primary: #1A2D42;
-    --secondary: #2E4156;
-    --muted: #AAB7B7;
-    --bg-soft: #C0C8CA;
-    --surface: #D4D8DD;
-    --white: #ffffff;
-}
-
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* BODY */
 body {
-    background: linear-gradient(180deg, var(--bg-soft), var(--secondary));
-    padding: 30px;
-    color: var(--primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f1419 0%, #1e3a8a 50%, #1e40af 100%);
+    background-attachment: fixed;
+    color: #f8fafc;
+    min-height: 100vh;
 }
 
-/* APP WRAPPER */
-.app {
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.current-date {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.search-section {
+    margin-bottom: 30px;
+}
+
+.search-container {
     display: flex;
-    background: var(--surface);
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(26, 45, 66, 0.25);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-/* ===============================
-   SIDEBAR
-================================ */
-.sidebar {
-    width: 260px;
-    padding: 24px;
-    background: linear-gradient(
-        180deg,
-        var(--white),
-        var(--surface)
-    );
-    border-right: 1px solid rgba(26, 45, 66, 0.08);
-}
-
-/* =========================
-   SIDEBAR SHIFT
-========================= */
-.shift-box {
-    border-radius: 14px;
-    padding: 18px 20px;
-    margin-bottom: 26px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-}
-
-/* Shift Pagi - terang */
-.shift-box:first-child {
-    background: #F5F7F8;
-}
-
-/* Shift Malam - sedikit lebih gelap */
-.shift-box:last-child {
-    background: #E9EDF0;
-}
-
-.shift-box h3 {
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 14px;
-    color: #2E4156;
-}
-
-/* HILANGKAN MARKER */
-.shift-box ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-}
-
-.shift-box li {
-    font-size: 13px;
-    padding: 7px 0;
-    color: #2E4156;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.shift-box li:last-child {
-    border-bottom: none;
-}
-
-
-/* ===============================
-   CONTENT
-================================ */
-.content {
+.search-input {
     flex: 1;
-    padding: 26px;
-}
-
-/* SEARCH */
-.top-bar {
-    margin-bottom: 18px;
-}
-
-.top-bar input {
-    width: 280px;
-    padding: 11px 16px;
-    border-radius: 12px;
-    border: none;
-    background: var(--white);
-    font-size: 13px;
-    box-shadow: 0 8px 20px rgba(26, 45, 66, 0.12);
+    padding: 12px 20px;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    border-radius: 25px;
+    background: rgba(15, 23, 42, 0.8);
+    color: #f8fafc;
+    font-size: 1rem;
     outline: none;
+    transition: all 0.3s ease;
 }
 
-.top-bar input::placeholder {
-    color: var(--muted);
+.search-input:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+    background: rgba(15, 23, 42, 1);
 }
 
-/* SEARCH RESULT */
-.search-result {
-    font-size: 13px;
-    margin-bottom: 16px;
-    color: var(--secondary);
+.search-input::placeholder {
+    color: #94a3b8;
 }
 
-/* ===============================
-   TABLE
-================================ */
-.table-wrapper {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(26, 45, 66, 0.15);
+.search-btn {
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-table {
+.search-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Compact Shift Summary */
+.shift-summary {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 58, 138, 0.1) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.shift-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.shift-row:last-child {
+    margin-bottom: 0;
+}
+
+.shift-label {
+    color: #60a5fa;
+    font-weight: 700;
+    margin-right: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.shift-names {
+    color: #f1f5f9;
+    letter-spacing: 0.3px;
+    flex: 1;
+}
+
+/* Day Shift styling */
+.shift-row:first-child .shift-label {
+    color: #22c55e;
+}
+
+/* Night Shift styling */
+.shift-row:last-child .shift-label {
+    color: #a78bfa;
+}
+
+
+
+
+
+.off-status {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 5px 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+
+
+
+
+.staff-details {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.1) 100%);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.staff-details h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #60a5fa;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #60a5fa;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    color: #f1f5f9;
+}
+
+/* Enhanced Scrollbar styling for all scrollable areas */
+.search-results-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.search-results-content::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 4px;
+}
+
+.search-results-content::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5);
+    border-radius: 4px;
+}
+
+.search-results-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.7);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .schedule-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .shift-summary {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .shift-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    
+    .shift-row:last-child {
+        margin-bottom: 0;
+    }
+    
+    .shift-label {
+        margin-right: 0;
+        font-size: 1rem;
+    }
+    
+    .shift-names {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Animation for search results */
+.staff-card.search-highlight {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.1) 100%);
+    border-color: #22c55e;
+    animation: highlight 1s ease-in-out;
+}
+
+@keyframes highlight {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.staff-card.search-hidden {
+    opacity: 0.3;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+/* Schedule Table Styles */
+.schedule-table-section {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.1) 100%);
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-top: 25px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    position: relative;
+}
+
+.schedule-table-section::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    border-radius: 2px;
+}
+
+.schedule-table-section h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #60a5fa;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.schedule-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 12.5px;
+    table-layout: fixed;
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* HEADER */
-thead {
-    background: linear-gradient(
-        90deg,
-        var(--primary),
-        var(--secondary)
-    );
-}
-
-thead th {
-    color: var(--white);
-    padding: 12px;
-    font-weight: 500;
+.schedule-table th {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+    color: #60a5fa;
+    font-weight: 600;
+    padding: 8px 6px;
+    text-align: center;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    font-size: 0.75rem;
+    text-transform: uppercase;
     letter-spacing: 0.3px;
 }
 
-/* CELL */
-td {
-    padding: 11px;
+.date-column {
+    width: 110px;
+    min-width: 110px;
+}
+
+.shift-column {
+    width: 85px;
+    min-width: 85px;
+}
+
+.schedule-table td {
+    padding: 6px 4px;
     text-align: center;
-    color: var(--primary);
-    border-bottom: 1px solid rgba(26, 45, 66, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(59, 130, 246, 0.05);
+    color: #f1f5f9;
+    font-weight: 500;
+    font-size: 0.8rem;
+    word-wrap: break-word;
+    min-height: 35px;
+    vertical-align: middle;
+    line-height: 1.2;
 }
 
-/* ROW */
-tbody tr:nth-child(odd) {
-    background: #f7f9fa;
+.date-cell {
+    background: rgba(30, 58, 138, 0.2) !important;
+    font-weight: 600;
+    color: #60a5fa;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.2;
+    font-size: 0.75rem;
 }
 
-tbody tr:hover {
-    background: rgba(26, 45, 66, 0.05);
+.day-row td {
+    background: rgba(34, 197, 94, 0.05);
+    border-top: 2px solid rgba(34, 197, 94, 0.3);
+}
+
+.night-row td {
+    background: rgba(147, 51, 234, 0.05);
+    border-top: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+.staff-assignment {
+    color: #f1f5f9;
+}
+
+.staff-assignment.empty {
+    color: #64748b;
+    font-style: italic;
+}
+
+.off-day {
+    color: #ef4444;
+    font-weight: 600;
+    background: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .schedule-table-section {
+        padding: 12px;
+        margin-top: 15px;
+    }
+    
+    .schedule-table-section h2 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    
+    .schedule-table-section::before {
+        top: -12px;
+        width: 50px;
+        height: 2px;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 5px 3px;
+        font-size: 0.7rem;
+    }
+    
+    .date-column {
+        width: 90px;
+        min-width: 90px;
+    }
+    
+    .shift-column {
+        width: 70px;
+        min-width: 70px;
+    }
+    
+    .date-cell {
+        font-size: 0.7rem;
+        line-height: 1.1;
+    }
+}
+
+/* Search Results */
+.search-results {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.1) 100%);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+}
+
+.search-results-header {
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+    padding-bottom: 15px;
+}
+
+.search-results-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #60a5fa;
+    margin-bottom: 5px;
+}
+
+.search-results-count {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.search-results-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.search-result-item {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.search-result-item:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: #60a5fa;
+    transform: translateY(-2px);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.result-staff-name {
+    font-weight: 600;
+    color: #f1f5f9;
+    font-size: 1.1rem;
+}
+
+.result-date {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.result-shift {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.result-shift.morning {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.result-shift.evening {
+    background: rgba(147, 51, 234, 0.2);
+    color: #a78bfa;
+}
+
+.result-websites {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.result-websites strong {
+    color: #60a5fa;
+}
+
+/* Responsive search results */
+@media (max-width: 768px) {
+    .search-results {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .search-results-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .result-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .result-staff-name {
+        font-size: 1rem;
+    }
+    
+    .result-date {
+        font-size: 0.8rem;
+    }
+    
+    .result-shift {
+        align-self: flex-start;
+    }
+}
 }
