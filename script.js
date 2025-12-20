@@ -184,23 +184,25 @@ function formatOff(list) {
 /*********************************
  * RENDER TABLE
  *********************************/
+const tbody = document.getElementById("scheduleBody");
+const searchInput = document.getElementById("searchInput");
+
 function renderTable(data) {
-  const tbody = document.querySelector("tbody");
   tbody.innerHTML = "";
 
   data.forEach(day => {
     const tr = document.createElement("tr");
 
     tr.innerHTML = `
-      <td class="date-col">${day.date}</td>
-      <td>${formatShift(day.SURIA88)}</td>
-      <td>${formatShift(day.HAKABET)}</td>
-      <td>${formatShift(day.VIOBET)}</td>
-      <td>${formatShift(day.TEMPO88)}</td>
-      <td>${formatShift(day.FILA88)}</td>
-      <td>${formatShift(day.IJOBET)}</td>
-      <td>${formatShift(day.HAHAWIN88)}</td>
-      <td class="off-day">${formatOff(day.OFF_DAY_UG)}</td>
+      <td>${day.date}</td>
+      <td>${day.SURIA88.join("<br><br>")}</td>
+      <td>${day.HAKABET.join("<br><br>")}</td>
+      <td>${day.VIOBET.join("<br><br>")}</td>
+      <td>${day.TEMPO88.join("<br><br>")}</td>
+      <td>${day.FILA88.join("<br><br>")}</td>
+      <td>${day.IJOBET.join("<br><br>")}</td>
+      <td>${day.HAHAWIN88.join("<br><br>")}</td>
+      <td>${day.OFF DAY UG.join("<br><br>")}</td>
     `;
 
     tbody.appendChild(tr);
@@ -210,20 +212,30 @@ function renderTable(data) {
 /*********************************
  * SEARCH STAFF (FIXED)
  *********************************/
-function searchStaff() {
-  const keyword = document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase()
-    .trim();
+function searchStaff(keyword) {
+  if (!keyword) {
+    renderTable(scheduleData);
+    return;
+  }
 
-  const rows = document.querySelectorAll("tbody tr");
+  const result = [];
 
-  rows.forEach(row => {
-    const rowText = row.textContent.toLowerCase();
-    row.style.display = rowText.includes(keyword) ? "" : "none";
+  scheduleData.forEach(day => {
+    Object.keys(day).forEach(key => {
+      if (key === "date") return;
+
+      day[key].forEach(name => {
+        if (name.toLowerCase().includes(keyword.toLowerCase())) {
+          result.push({
+            date: day.date,
+            web: key,
+            name: name
+          });
+        }
+      });
+    });
   });
-}
+
 
 /*********************************
  * INIT
@@ -231,4 +243,5 @@ function searchStaff() {
 document.addEventListener("DOMContentLoaded", () => {
   renderTable(scheduleData);
 });
+
 
