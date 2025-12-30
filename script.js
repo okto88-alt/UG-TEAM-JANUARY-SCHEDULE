@@ -322,7 +322,7 @@ function getScheduleData() {
             'FILA88': 'Angga',
             'IJOBET': 'Jerry',
             'HAHAWIN88': 'Alfan',
-            'OFF DAY UG': 'Kheiren'
+            'OFF DAY UG': 'Vindy'
             }
         },
         {
@@ -662,5 +662,6 @@ function generateScheduleTable() {
 
     tableBody.innerHTML = tableHTML;
 }
+
 
 
