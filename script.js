@@ -368,9 +368,9 @@ function getScheduleData() {
             'VIOBET': 'Anggie',
             'TEMPO88': 'Alfan',
             'FILA88': 'Angga',
-            'IJOBET': 'Kenny',
-            'HAHAWIN88': 'Alfan',
-            'OFF DAY UG': 'Jerry'
+            'IJOBET': 'Jerry',
+            'HAHAWIN88': 'Kenny',
+            'OFF DAY UG': '-'
             }
         },
                          {
@@ -686,6 +686,7 @@ function generateScheduleTable() {
 
     tableBody.innerHTML = tableHTML;
 }
+
 
 
 
