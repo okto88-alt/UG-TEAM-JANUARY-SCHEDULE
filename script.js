@@ -240,7 +240,7 @@ function getScheduleData() {
             'FILA88': 'Dea',
             'IJOBET': 'Valvi',
             'HAHAWIN88': 'Wendi',
-            'OFF DAY UG': 'Kenny'
+            'OFF DAY UG': 'Kenny. Angga'
         },
             evening: {
             'SURIA88': 'Andi',
@@ -264,7 +264,7 @@ function getScheduleData() {
             'FILA88': 'Angga',
             'IJOBET': 'Dea',
             'HAHAWIN88': 'Wendi',
-            'OFF DAY UG': '-'
+            'OFF DAY UG': 'Anggie, Jerry, Ryan'
         },
             evening: {
             'SURIA88': 'Andi',
@@ -288,7 +288,7 @@ function getScheduleData() {
             'FILA88': 'Angga',
             'IJOBET': 'Jerry',
             'HAHAWIN88': 'Dea',
-            'OFF DAY UG': '-'
+            'OFF DAY UG': 'Firman'
         },
         evening: {
             'SURIA88': 'Andi',
@@ -298,7 +298,7 @@ function getScheduleData() {
             'FILA88': 'Kheiren',
             'IJOBET': 'Valvi',
             'HAHAWIN88': 'Kris',
-            'OFF DAY UG': '-'
+            'OFF DAY UG': 'Heno'
             }
         },
                 {
@@ -306,13 +306,13 @@ function getScheduleData() {
             dayName: 'Wednesday',
             morning: {
             'SURIA88': 'Anggie',
-            'HAKABET': 'Adit, Bima',
+            'HAKABET': 'Adit',
             'VIOBET': 'Vera',
             'TEMPO88': 'Ryan',
             'FILA88': 'Angga',
             'IJOBET': 'Jerry',
             'HAHAWIN88': 'Firman',
-            'OFF DAY UG': '-'
+            'OFF DAY UG': 'Bima'
         },
             evening: {
             'SURIA88': 'Andi',
@@ -322,7 +322,7 @@ function getScheduleData() {
             'FILA88': 'Heno',
             'IJOBET': 'Valvi',
             'HAHAWIN88': 'Kris',
-            'OFF DAY UG': '-'
+            'OFF DAY UG': 'Kheiren'
             }
         },
                         {
@@ -346,7 +346,7 @@ function getScheduleData() {
             'FILA88': 'Kheiren',
             'IJOBET': 'Valvi',
             'HAHAWIN88': 'Kris',
-            'OFF DAY UG': '-'
+            'OFF DAY UG': 'Alfan'
             }
         },
                         {
@@ -384,7 +384,7 @@ function getScheduleData() {
             'FILA88': 'Angga',
             'IJOBET': 'Jerry',
             'HAHAWIN88': 'Firman',
-            'OFF DAY UG': '-'
+            'OFF DAY UG': 'Adit'
         },
             evening: {
             'SURIA88': 'Alfan',
@@ -394,7 +394,7 @@ function getScheduleData() {
             'FILA88': 'Kheiren',
             'IJOBET': 'Valvi',
             'HAHAWIN88': 'Wendi',
-            'OFF DAY UG': 'Andi'
+            'OFF DAY UG': 'Kris'
             }
         },
                                 {
@@ -408,7 +408,7 @@ function getScheduleData() {
             'FILA88': 'Angga',
             'IJOBET': 'Jerry',
             'HAHAWIN88': 'Firman',
-            'OFF DAY UG': '-'
+            'OFF DAY UG': 'Kenny'
         },
             evening: {
             'SURIA88': 'Andi',
@@ -417,8 +417,8 @@ function getScheduleData() {
             'TEMPO88': 'Egi',
             'FILA88': 'Kheiren',
             'IJOBET': 'Valvi',
-            'HAHAWIN88': 'Wendi',
-            'OFF DAY UG': 'Vindy'
+            'HAHAWIN88': 'Alfan',
+            'OFF DAY UG': 'Vindy, Wendi'
             }
         },
 
@@ -591,6 +591,7 @@ function generateScheduleTable() {
 
     tableBody.innerHTML = tableHTML;
 }
+
 
 
 
